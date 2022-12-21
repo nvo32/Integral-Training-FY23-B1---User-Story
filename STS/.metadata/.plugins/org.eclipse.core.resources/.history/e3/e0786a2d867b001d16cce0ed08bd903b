@@ -1,0 +1,1542 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<!-- nvo32 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%-- <link rel="stylesheet" href="<%=request.getContextPath()%>/templates/main.css"> --%>
+<link href="bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="bootstrap/sb/vendor/metisMenu/metisMenu.min.css"
+	rel="stylesheet">
+<link href="bootstrap/sb/dist/css/sb-admin-2.css" rel="stylesheet">
+<link href="bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link href="bootstrap/integral/integral-admin.css" rel="stylesheet"
+	type="text/css">
+
+<script language="javaScript" src="js/xmlReader.js"></script>
+<script src="bootstrap/sb/vendor/jquery/jquery.js"></script>
+
+<!-- sb admin begin -->
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/metisMenu/metisMenu.min.css"
+	rel="stylesheet">
+<link href="/csc-group-asia-web/bootstrap/sb/dist/css/sb-admin-2.css"
+	rel="stylesheet">
+<link href="/csc-group-asia-web/bootstrap/sb/vendor/morrisjs/morris.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="/csc-group-asia-web/bootstrap/datetimepicker/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" media="screen">
+<link href="/csc-group-asia-web/bootstrap/integral/integral-admin.css"
+	rel="stylesheet" type="text/css">
+<!-- IGROUP-4208 -->
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/jquery/jquery.min.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="/csc-group-asia-web/bootstrap/sb/dist/js/sb-admin-2.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/datetimepicker/bootstrap-datetimepicker.min.js"
+	charset="UTF-8"></script>
+<script src="/csc-group-asia-web/bootstrap/integral/integral-admin.js"></script>
+<!-- IGROUP-4208 -->
+
+<!-- YY -->
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<!-- sb admin end -->
+<!-- End nvo32 -->
+<title>DXC</title>
+</head>
+<body>
+	<form name="form1" method="post" action="/csc-group-asia-web/process"
+		target="_top" onsubmit="return suppressit();"
+		onclick="selectSpecial()">
+		<div class="row"
+			style="border: 0px; margin: 0 0 0 0; background-color: #5f249f">
+
+			<div class="col-md-1"
+				style="width: 50px !important; padding-left: 15px; padding-right: 0px; border: 0px; top: 3px;">
+				<span style="font-size: 30px; cursor: pointer; color: #fff"
+					id="openNav-btn" onmouseover="openNav()">☰</span>
+			</div>
+
+			<div class="col-md-1"
+				style="width: 80px !important; padding-left: 15px; padding-right: 0px; border: 0px; top: -2px;">
+				<!-- IBPGROUP-2221 -->
+				<img src="/csc-group-asia-web/screenFiles/DXC_newlogo.png"
+					width="55px" border="0">
+				<!-- IBPGROUP-2221 -->
+			</div>
+			<div class="col-md-2"
+				style="width: 140px !important; padding-left: 0px; padding-right: 0px; border: 0px; top: 5px;">
+				<div
+					style="font-size: 15px; font-weight: bold; color: white !important;">DXC
+					Assure Policy</div>
+				<table
+					style="font-size: 10px !important; font-weight: bold; width: 91%;">
+					<tbody>
+						<tr>
+							<td style="color: #ffffff !important;">1.0-SNAPSHOT</td>
+							<td style="text-align: right; color: #fff !important;"></td>
+							<!-- S0017 -->
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-md-3"></div>
+			<!-- feedback version -->
+			<div class="col-md-6" id="topPanel">
+				<nav class="navbar navbar-default navbar-static-top"
+					role="navigation"
+					style="margin-bottom: 0; margin-top: -2px !important; background-color: #5f249f;">
+
+					<ul class="nav navbar-top-links navbar-right"
+						style="background-color: #5f249f; margin-top: 1px !important;">
+
+						<ul class="nav navbar-top-links navbar-right"
+							style="background-color: #5f249f; margin-top: 1px !important;">
+							<li><a href="Sisense URL not configured" target=""
+								style="color: #fff; font-size: 20px !important;" title="Sisense"><i
+									class="fa fa-bar-chart" style="color: white;"></i></a></li>
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Product Stage"><i class="fa fa-briefcase"
+									style="color: white;"></i></a></li> -
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Home"><i class="fa fa-home" style="color: white;"></i></a></li>
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Session Info"><i class="fa fa-info-circle"
+									style="color: white;"></i></a></li>
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Help"><i class="fa fa-question-circle"
+									style="color: white;"></i></a></li>
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Logout"><i class="fa fa-sign-out"
+									style="color: white;"></i></a></li>
+
+							<li class="userInfo"
+								title="Login time :&nbsp;07/12/2022&nbsp;at&nbsp;10:15:36Business Date:12/11/2022">
+								<a href="#"> <span class="glyphicon glyphicon-user"
+									style="color: white; top: 2px;"></span> <span
+									style="padding-left: 10px; color: white; top: 2px;">PBHARDAWA</span>
+							</a>
+							</li>
+						</ul>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</form>
+	<form>
+		<div class="container" style="margin-top: -140px; display: block;">
+
+			<div id="page-header" class="row">
+				<h1
+					style="margin: 25px 15px 15px 15px !important; font-family: 'Oswald', sans-serif !important; font-weight: 500 !important; font-size: 24px !important; border-bottom: 1px solid #eee !important; border-bottom-style: double !important; margin-bottom: 10px""="">Account
+					Maintenance</h1>
+
+			</div>
+
+
+
+
+			<style>
+#btnOK, #btnCancel2 {
+	background-color: #5CB85C;
+	color: white;
+	border: 0px;
+	font-size: 14px;
+	font-weight: normal;
+	opacity: 1 !important;
+	z-index: 10;
+	padding: 3px 12px !important;
+	text-align: center;
+	margin: 0px;
+	border-radius: 5px;
+}
+
+#btnCancel2 {
+	background-color: #EA4742;
+}
+</style>
+
+
+
+			<div id="myModal" class="modal">
+				<div class="modal-content"
+					style="width: 40%; margin: 0px 20%; padding: 0px 0px 40px 0px;">
+					<p style="padding-bottom: 20px;">The session will be terminated
+						in 5 minutes. Do you want to continue?</p>
+					<!--  <span class="close" style="padding-left: 10px;"><input type="button" id="btnCancel2" style="font-size: 15px;width: 60px;height:23px;" value="Cancel"/></span>
+	 <span>&nbsp;&nbsp;</span>
+	 <span class="close"><input type="button"  id="btnOK" style="font-size: 15px;width: 30px;height:23px;" value="Ok"/></span> -->
+					<div class="button-container"
+						style="float: right; margin-right: 20px;">
+						<button id="btnOK">Ok</button>
+						&nbsp;
+						<button id="btnCancel2">Cancel</button>
+					</div>
+				</div>
+			</div>
+			<!-- IGROUP-6118 STARTS-->
+
+			<div id="msg-panel" class="panel panel-info mainform-msg"
+				style="display: none; visibility: hidden; position: fixed;">
+				<span class="closebtn"
+					onclick="this.parentElement.style.display='none';">×</span>
+			</div>
+			<script>
+	if(sessionStorage.getItem("sidebar") ==="pined"){
+		document.getElementById("msg-panel").style.visibility = 'hidden';
+	}
+</script>
+
+			<!-- IGROUP-6118 ENDS-->
+			<script language="javaScript">
+var mainDoc;
+var exipreTime1;
+$(document).ready(function() {
+	mainDoc=parent.frames["frameMenu"];
+	exipreTime1 = '300';
+	var exipreTime2 = '7200';
+	setTimeout(function(){ triggerTimeOut(); }, (exipreTime2-exipreTime1)*1000);
+});
+function triggerTimeOut(){
+		var timeoutObject = setTimeout(function(){ triggerLogoutPage(); }, (exipreTime1)*1000);
+		$('#headerTopLink').removeAttr("style")
+		$('#headerTopLink').css({"position":"absolute"," top":"20px","height":"27px","left":"1px","right":"1px"});
+		
+		var modal = document.getElementById('myModal');
+		modal.style.display = "block";
+		$( "#btnOK" ).click(function() {
+		
+		            	clearTimeout(timeoutObject);
+						var exipreTime1 = '300';
+			            var exipreTime2 = '7200';
+			            setTimeout(function(){ triggerTimeOut(); }, (exipreTime2-exipreTime1)*1000);
+			            $('#headerTopLink').css({"position":"absolute"," top":"130px","height":"27px","left":"1px","right":"1px","z-index":"5"});
+			            modal.style.display = "none";
+			          
+		          
+		        });
+	
+		$( "#btnCancel2" ).click(function() {
+			clearTimeout(timeoutObject);
+			 triggerLogoutPage();
+		});
+}
+function triggerLogoutPage(){
+	var killsession='/csc-group-asia-web/logout?t=' + new Date();
+	parent.location.replace(killsession);
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<!-- IPAE 24 - Req#50 - Obtain quote for Facultative RI START -->
+
+
+			<!-- IPAE 24 - Req#50 - Obtain quote for Facultative RI START -->
+			<!-- BSIBP-197 - P&C-CT-DB-003 START -->
+
+			<!-- BSIBP-197 - P&C-CT-DB-003 END-->
+			<!-- BSIB-004 START -->
+
+
+			<!-- BSIB-004 END-->
+			<!-- Start IFSU-4306 -->
+
+
+			<!-- End IFSU-4306 -->
+
+
+			<!-- nvo32 -->
+
+			<!-- End nvo32 -->
+
+
+
+
+			<!-- IFSU-589 Modified it by xma3 -->
+
+			<style>
+#dateendDisp_div {
+	min-width: 80px !important;
+}
+
+.form-control[disabled], #crlimit_div, #licnexdtDisp_div, #credterm_div,
+	#chdrstcdb_div {
+	min-width: 110px;
+}
+
+.ellipsis>.form-control {
+	white-space: nowrap !important;
+	overflow: hidden !important;
+	text-overflow: ellipsis !important;
+}
+
+#licence_div {
+	width: 110px !important;
+}
+</style>
+			<script>
+$(document).ready(function(){
+	$(".input-group.ellipsis").find(".form-control").each(function(){
+		$(this).attr('title', this.placeholder)
+	});
+})
+</script>
+			<div class="panel panel-default" style="height: auto;">
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-4">
+
+							<label>
+								<div class="label_txt"
+									style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 48px; height: 16px;">Client</div>
+							</label>
+
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<div class="form-group">
+
+												<div class="input-group" style="width: 130px;">
+													<input name="clntsel" id="clntsel" type="text" size="10"
+														style="padding-top: 3px; overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+														value="          " maxlength="10" onfocus="doFocus(this)"
+														onhelp="return fieldHelp(&quot;clntsel&quot;)"
+														onkeyup="return checkMaxLength(this)" class="form-control"
+														tabindex="2"> <span class="input-group-btn">
+														<button class="btn btn-info" type="button"
+															onclick="doFocus(document.getElementById('clntsel')); doAction('PFKEY04')"
+															tabindex="3">
+															<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+														</button>
+													</span>
+												</div>
+
+
+
+
+											</div>
+										</td>
+
+										<td style="width: 150px;">
+											<div id="cltname_div" class="form-control ellipsis"
+												onhelp="return fieldHelp(&quot;cltname&quot;)"
+												style="width: 70px; background-color: rgb(238, 238, 238);"
+												title="                                                                                                                        ">
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+						</div>
+
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 128px; height: 16px;">Servicing&nbsp;Branch</div>
+								</label>
+								<div class="input-group" style="width: 80px;">
+
+									<!-- <input class="form-control" -->
+
+									<!-- changed by yy for IFSU-449  -->
+
+									<div style="position: relative;">
+										<select name="branch" id="branch" value="10" type="list"
+											style="width: 195.0px;" onfocus="doFocus(this)"
+											onhelp="return fieldHelp" class="form-control" tabindex="4"><option
+												value="" title="---------Select---------">---------Select---------</option>
+											<option value="123421" title="A123                          ">A123
+											</option>
+											<option value="45" title="AVDHN                         ">AVDHN
+											</option>
+											<option value="**" title="All Branches                  ">All
+												Branches</option>
+											<option value="BRANCH11"
+												title="BRANCH11                      ">BRANCH11</option>
+											<option value="10" title="Branch 10                     "
+												selected="selected">Branch 10</option>
+											<option value="62" title="CSC_DAtcBoDU                  ">CSC_DAtcBoDU
+											</option>
+											<option value="76" title="CSC_DnjZPtaA                  ">CSC_DnjZPtaA
+											</option>
+											<option value="91" title="CSC_FCYHTzAy                  ">CSC_FCYHTzAy
+											</option>
+											<option value="15" title="CSC_HpUyxOxf                  ">CSC_HpUyxOxf
+											</option>
+											<option value="47" title="CSC_Integral                  ">CSC_Integral
+											</option>
+											<option value="41" title="CSC_IyTKcGbn                  ">CSC_IyTKcGbn
+											</option>
+											<option value="42" title="CSC_dauiTRpd                  ">CSC_dauiTRpd
+											</option>
+											<option value="21" title="CSC_dkhxZXYM                  ">CSC_dkhxZXYM
+											</option>
+											<option value="72" title="CSC_feYFZnkO                  ">CSC_feYFZnkO
+											</option>
+											<option value="92" title="CSC_gPZsuBVj                  ">CSC_gPZsuBVj
+											</option>
+											<option value="04" title="CSC_mmINeYkf                  ">CSC_mmINeYkf
+											</option>
+											<option value="16" title="CSC_piRBEVnZ                  ">CSC_piRBEVnZ
+											</option>
+											<option value="02" title="CSC_qWQTMGpp                  ">CSC_qWQTMGpp
+											</option>
+											<option value="84" title="CSC_sdlmfGch                  ">CSC_sdlmfGch
+											</option>
+											<option value="66" title="CSC_ydtdfJLj                  ">CSC_ydtdfJLj
+											</option>
+											<option value="HO" title="Head Office                   ">Head
+												Office</option>
+											<option value="111" title="Jurong Branch 1               ">Jurong
+												Branch 1</option>
+											<option value="11" title="Jurong Branch 1               ">Jurong
+												Branch 1</option>
+											<option value="T35" title="T35                           ">T35
+											</option>
+											<option value="T56" title="TEST                          ">TEST
+											</option>
+											<option value="T7" title="Test                          ">Test
+											</option></select>
+									</div>
+
+
+									<!-- </input> -->
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 112px; height: 16px;">Date&nbsp;Appointed</div>
+								</label>
+
+
+								<div class="input-group date form_date col-md-12"
+									data-date="12/11/2022" data-link-field="startDateDisp"
+									style="width: 150px;">
+									<input name="startDateDisp" id="startDateDisp" type="text"
+										size="10"
+										style="overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+										value="12/11/2022" maxlength="10" onfocus="doFocus(this)"
+										onhelp="return fieldHelp(&quot;startDateDisp&quot;)"
+										onkeyup="return checkMaxLength(this)"
+										class="input_cell bold form-control" tabindex="5"> <span
+										class="input-group-addon"> <span
+										class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+
+
+
+
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 56px; height: 16px;">Account</div>
+								</label>
+								<table>
+									<tbody>
+										<tr>
+											<td>
+												<div id="agntnum_div" class="form-control ellipsis"
+													onhelp="return fieldHelp(&quot;agntnum&quot;)"
+													style="margin-right: -3px; background-color: rgb(238, 238, 238); color: rgb(153, 153, 153); font-weight: bold; width: 80px;"
+													title="48078   ">48078</div>
+											</td>
+											<td style="width: 100px;"><input name="agntname"
+												id="agntname" type="text" size="30"
+												style="margin-left: 1px; overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+												value="                              " maxlength="30"
+												onfocus="doFocus(this)"
+												onhelp="return fieldHelp(&quot;agntname&quot;)"
+												onkeyup="return checkMaxLength(this)" class="form-control"
+												tabindex="6"></td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group" style="width: 110px;">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 96px; height: 16px;">Account&nbsp;Type</div>
+								</label>
+
+
+
+								<div style="position: relative;">
+									<select name="dbtype" id="dbtype" value="" type="list"
+										style="width: 195.0px;" onfocus="doFocus(this)"
+										onhelp="return fieldHelp" class="form-control" tabindex="7"><option
+											value="" title="---------Select---------">---------Select---------</option>
+										<option value="01" title="Agent *                       ">Agent
+											*</option>
+										<option value="**" title="All Agent Type                ">All
+											Agent Type</option>
+										<option value="02" title="Broker                        ">Broker
+										</option>
+										<option value="07" title="Claim Debit                   ">Claim
+											Debit</option>
+										<option value="70" title="Coinsurance Outward - Recovery">Coinsurance
+											Outward - Recovery</option>
+										<option value="09" title="DIRECT CLIENT - LEOW PEK LENG ">DIRECT
+											CLIENT - LEOW PEK LENG</option>
+										<option value="04" title="Direct                        ">Direct
+										</option>
+										<option value="08" title="FAC Inwards                   ">FAC
+											Inwards</option>
+										<option value="10" title="FACULTATIVE INWARD - LOCAL    ">FACULTATIVE
+											INWARD - LOCAL</option>
+										<option value="20" title="FACULTATIVE OUT               ">FACULTATIVE
+											OUT</option>
+										<option value="21" title="FACULTATIVE OUT               ">FACULTATIVE
+											OUT</option>
+										<option value="22" title="FACULTATIVE OUT               ">FACULTATIVE
+											OUT</option>
+										<option value="23" title="FACULTATIVE OUT               ">FACULTATIVE
+											OUT</option>
+										<option value="12" title="FACULTATIVE OUTWARD-LOCAL     ">FACULTATIVE
+											OUTWARD-LOCAL</option>
+										<option value="11" title="FACULTATIVE OUTWARD-S'PORE RE ">FACULTATIVE
+											OUTWARD-S'PORE RE</option>
+										<option value="61" title="Fac Out Asean (Ded) -Recovery ">Fac
+											Out Asean (Ded) -Recovery</option>
+										<option value="62" title="Fac Out Asean (Nded) -Recovery">Fac
+											Out Asean (Nded) -Recovery</option>
+										<option value="63" title="Fac Out Overseas(Ded)-Recovery">Fac
+											Out Overseas(Ded)-Recovery</option>
+										<option value="64" title="Fac Out Overseas(NDed-Recovery">Fac
+											Out Overseas(NDed-Recovery</option>
+										<option value="60" title="Fac Outward(Local) - Recovery ">Fac
+											Outward(Local) - Recovery</option>
+										<option value="72" title="Fac Outward(Other) - Recovery ">Fac
+											Outward(Other) - Recovery</option>
+										<option value="66" title="Fac XOL Asean (Ded) -Recovery ">Fac
+											XOL Asean (Ded) -Recovery</option>
+										<option value="67" title="Fac XOL Asean (Nded) -Recovery">Fac
+											XOL Asean (Nded) -Recovery</option>
+										<option value="65" title="Fac XOL Local - Recovery      ">Fac
+											XOL Local - Recovery</option>
+										<option value="68" title="Fac XOL Overseas(Ded)-Recovery">Fac
+											XOL Overseas(Ded)-Recovery</option>
+										<option value="69" title="Fac XOL Overseas(NDed)-Recover">Fac
+											XOL Overseas(NDed)-Recover</option>
+										<option value="24" title="Facultative Out Overseas(NDed)">Facultative
+											Out Overseas(NDed)</option>
+										<option value="71" title="Facultative Outward Others    ">Facultative
+											Outward Others</option>
+										<option value="15" title="Facultative XOL (Local)       ">Facultative
+											XOL (Local)</option>
+										<option value="17" title="Facultative XOL ASEAN (NDed)  ">Facultative
+											XOL ASEAN (NDed)</option>
+										<option value="16" title="Facultative XOL Asean (Ded)   ">Facultative
+											XOL Asean (Ded)</option>
+										<option value="18" title="Facultative XOL Overseas (Ded)">Facultative
+											XOL Overseas (Ded)</option>
+										<option value="19" title="Facultative XOL Overseas(NDed)">Facultative
+											XOL Overseas(NDed)</option>
+										<option value="25" title="Government - Singapore Re     ">Government
+											- Singapore Re</option>
+										<option value="14" title="Group Reinsurance (outward)   ">Group
+											Reinsurance (outward)</option>
+										<option value="06" title="Over-riding Agent             ">Over-riding
+											Agent</option>
+										<option value="05" title="Reinsurance Account (outward) ">Reinsurance
+											Account (outward)</option>
+										<option value="80" title="Sundry                        ">Sundry
+										</option>
+										<option value="81" title="Suspense                      ">Suspense
+										</option>
+										<option value="13" title="TREATY OUTWARD-QUOTA SHARE (L)">TREATY
+											OUTWARD-QUOTA SHARE (L)</option>
+										<option value="30" title="Treaty Outward (Local)        ">Treaty
+											Outward (Local)</option>
+										<option value="31" title="Treaty Outward (Others)       ">Treaty
+											Outward (Others)</option>
+										<option value="26" title="Treaty Outward Asean (Ded)    ">Treaty
+											Outward Asean (Ded)</option>
+										<option value="27" title="Treaty Outward Asean (Non-Ded)">Treaty
+											Outward Asean (Non-Ded)</option>
+										<option value="28" title="Treaty Outward Overseas (Ded) ">Treaty
+											Outward Overseas (Ded)</option>
+										<option value="29" title="Treaty Outward Overseas (NDed)">Treaty
+											Outward Overseas (NDed)</option>
+										<option value="37" title="Treaty Outward Quota(Local)   ">Treaty
+											Outward Quota(Local)</option>
+										<option value="32" title="Treaty Outward Surplus(Local) ">Treaty
+											Outward Surplus(Local)</option>
+										<option value="42" title="Treaty Outward XOL(Local)     ">Treaty
+											Outward XOL(Local)</option>
+										<option value="39" title="Tty Out Quota Asean (Non-Ded) ">Tty
+											Out Quota Asean (Non-Ded)</option>
+										<option value="44" title="Tty Out XOL Asean (Non-Ded)   ">Tty
+											Out XOL Asean (Non-Ded)</option>
+										<option value="38" title="Tty Ow Quota Asean (Ded)      ">Tty
+											Ow Quota Asean (Ded)</option>
+										<option value="40" title="Tty Ow Quota Overseas (Ded)   ">Tty
+											Ow Quota Overseas (Ded)</option>
+										<option value="41" title="Tty Ow Quota Overseas (NDed)  ">Tty
+											Ow Quota Overseas (NDed)</option>
+										<option value="33" title="Tty Ow Suplus Asean (Ded)     ">Tty
+											Ow Suplus Asean (Ded)</option>
+										<option value="34" title="Tty Ow Suplus Asean (Non-Ded) ">Tty
+											Ow Suplus Asean (Non-Ded)</option>
+										<option value="35" title="Tty Ow Suplus Overseas (Ded)  ">Tty
+											Ow Suplus Overseas (Ded)</option>
+										<option value="36" title="Tty Ow Surplus Overseas (NDed ">Tty
+											Ow Surplus Overseas (NDed</option>
+										<option value="43" title="Tty Ow XOL Asean (Ded)        ">Tty
+											Ow XOL Asean (Ded)</option>
+										<option value="45" title="Tty Ow XOL Overseas (Ded)     ">Tty
+											Ow XOL Overseas (Ded)</option>
+										<option value="46" title="Tty Ow XOL Overseas (NDed)    ">Tty
+											Ow XOL Overseas (NDed)</option></select>
+								</div>
+
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 128px; height: 16px;">Termination&nbsp;Date</div>
+								</label>
+
+
+
+								<div class="input-group date form_date col-md-12"
+									data-date="12/11/2022" data-link-field="dateendDisp"
+									style="width: 150px;">
+									<input name="dateendDisp" id="dateendDisp" type="text"
+										size="10"
+										style="overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+										value="          " maxlength="10" onfocus="doFocus(this)"
+										onhelp="return fieldHelp(&quot;dateendDisp&quot;)"
+										onkeyup="return checkMaxLength(this)"
+										class="input_cell bold form-control" tabindex="8"> <span
+										class="input-group-addon"> <span
+										class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+
+
+
+
+
+
+							</div>
+						</div>
+					</div>
+					<!-- IFSU-2084 starts -->
+
+					<div class="row">
+						<div class="col-md-4">
+
+							<label>
+								<div class="label_txt"
+									style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 80px; height: 16px;">Reports&nbsp;To</div>
+							</label>
+							<table>
+								<tbody>
+									<tr>
+										<td>
+											<div class="form-group">
+
+												<div class="input-group" style="width: 130px;">
+													<input name="reporttos" id="reporttos" type="text"
+														size="10"
+														style="padding-top: 3px; overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+														value="          " maxlength="10" onfocus="doFocus(this)"
+														onhelp="return fieldHelp(&quot;reporttos&quot;)"
+														onkeyup="return checkMaxLength(this)" class="form-control"
+														tabindex="9"> <span class="input-group-btn">
+														<button class="btn btn-info" type="button"
+															onclick="doFocus(document.getElementById('reporttos')); doAction('PFKEY04')"
+															tabindex="10">
+															<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+														</button>
+													</span>
+												</div>
+
+
+
+
+											</div>
+										</td>
+
+										<td style="width: 150px;">
+											<div id="reportton_div" class="form-control ellipsis"
+												onhelp="return fieldHelp(&quot;reportton&quot;)"
+												style="background-color: rgb(238, 238, 238); width: 70px;"
+												title="                                               ">
+											</div>
+										</td>
+									</tr>
+								</tbody>
+							</table>
+
+
+
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+								<label><div class="label_txt"
+										style="position: relative; bottom: 2px;">GST Regn No.:</div></label>
+								<div class="input-group" style="min-width: 130px;">
+									<input name="gstreg" id="gstreg" type="text" size="15"
+										style="overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+										value="               " maxlength="15" onfocus="doFocus(this)"
+										onhelp="return fieldHelp(&quot;gstreg&quot;)"
+										onkeyup="return checkMaxLength(this)" class="form-control"
+										tabindex="11">
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4">
+
+							<div class="form-group language">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 1px; left: 0px; width: 64px; height: 16px;">Language</div>
+								</label>
+
+
+
+
+								<!-- changed by yy for IFSU-449  -->
+
+								<div class="form-control ellipsis"
+									style="margin-bottom: 19px; padding-bottom: 0px; padding-top: 5px; background-color: rgb(238, 238, 238); width: 70px;"
+									add="" by="" yy="" for="" ifsu-414="" id="temp_language"
+									title="
+							 
+					    "></div>
+
+
+
+							</div>
+						</div>
+					</div>
+
+
+					<!-- Start IFSU-4306 -->
+
+					<!-- End IFSU-4306 -->
+					<!-- IFSU-2084 Changes ends -->
+					<hr>
+
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 112px; height: 16px;">Reconciliation</div>
+								</label>
+								<!-- <div class="input-group ellipsis"> -->
+
+								<!-- <input class="form-control" -->
+
+
+								<div style="position: relative;">
+									<select name="accountReconciliation" id="accountReconciliation"
+										value="" type="list" style="width: 195.0px;"
+										onfocus="doFocus(this)" onhelp="return fieldHelp"
+										class="form-control" tabindex="12"><option value=""
+											title="---------Select---------">---------Select---------</option>
+										<option value="02" title="BALANCE BROUGHT FORWARD       ">BALANCE
+											BROUGHT FORWARD</option>
+										<option value="01" title="OPEN ITEM                     ">OPEN
+											ITEM</option></select>
+								</div>
+
+
+
+								<!-- </input> -->
+								<!-- </div> -->
+							</div>
+						</div>
+						<div class="col-md-4 ">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 112px; height: 16px;">Statement&nbsp;Type</div>
+								</label>
+								<!-- <div class="input-group ellipsis"> -->
+
+
+								<div style="position: relative;">
+									<select name="statementReqd" id="statementReqd" value=""
+										type="list" style="width: 195.0px;" onfocus="doFocus(this)"
+										onhelp="return fieldHelp" class="form-control" tabindex="13"><option
+											value="" title="---------Select---------">---------Select---------</option>
+										<option value="05" title="CLIENT / COMM / STMT OF ACCT  ">CLIENT
+											/ COMM / STMT OF ACCT</option>
+										<option value="01" title="CLIENT STATEMENT              ">CLIENT
+											STATEMENT</option>
+										<option value="04" title="COMM STMT AND STMT OF ACCOUNT ">COMM
+											STMT AND STMT OF ACCOUNT</option>
+										<option value="03" title="COMMISSION AND CLIENT STMTS   ">COMMISSION
+											AND CLIENT STMTS</option>
+										<option value="02" title="STATEMENT OF ACCOUNT          ">STATEMENT
+											OF ACCOUNT</option></select>
+								</div>
+
+
+
+								<!-- </div> -->
+							</div>
+						</div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 128px; height: 16px;">Settlement&nbsp;Basis</div>
+								</label> <input type="checkbox" name="stlbasis" value="G"
+									onfocus="doFocus(this)" onhelp="return fieldHelp(stlbasis)"
+									onkeyup="return checkMaxLength(this)" class="UICheck"
+									onclick="handleCheckBox('stlbasis')" tabindex="14"> <input
+									type="checkbox" name="stlbasis" value="N" checked=""
+									style="visibility: hidden; margin-top: -13px; margin-left: 13px;"
+									onclick="handleCheckBox('stlbasis')" tabindex="15">
+
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group" style="width: 90px;">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 136px; height: 16px;">Product&nbsp;Category&nbsp;</div>
+								</label>
+
+								<!-- <input class="form-control" -->
+
+
+
+
+
+
+								<!-- </input> -->
+							</div>
+						</div>
+						<div class="col-md-2 col-md-offset-1">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 168px; height: 16px;">Credit&nbsp;Limit&nbsp;Balance&nbsp;</div>
+								</label>
+								<div title="0.00"
+									style="overflow: hidden; text-align: right; background-color: rgb(238, 238, 238); color: rgb(153, 153, 153); font-weight: bold; width: 80px;"
+									id="rcrlimit_div" class="form-control ellipsis"
+									onhelp="return fieldHelp(&quot;rcrlimit&quot;)">0.00</div>
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 96px; height: 16px;">Renewal&nbsp;List</div>
+								</label> <input type="checkbox" name="expiryNotice" value="Y"
+									onfocus="doFocus(this)" onhelp="return fieldHelp(expiryNotice)"
+									onkeyup="return checkMaxLength(this)" class="UICheck"
+									onclick="handleCheckBox('expiryNotice')" tabindex="16">
+								<input type="checkbox" name="expiryNotice" value=" " checked=""
+									style="visibility: hidden; margin-top: -13px; margin-left: 13px;"
+									onclick="handleCheckBox('expiryNotice')" tabindex="17">
+
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<!-- nvo32 -->
+						<div class="col-md-2">
+							<div class="form-group" style="width: 90px;">
+								<label>Agent Name</label> <input name="agntnm" id="agntnm"
+									type="text" size="50"
+									style="overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+									value="                                                  "
+									maxlength="50" onfocus="doFocus(this)"
+									onhelp="return fieldHelp(&quot;agntnm&quot;)"
+									onkeyup="return checkMaxLength(this)" class="form-control"
+									tabindex="18">
+							</div>
+						</div>
+						<!-- End nvo32 -->
+						<div class="col-md-2">
+							<div class="form-group" style="width: 90px;">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 88px; height: 16px;">Days&nbsp;Credit</div>
+								</label> <input name="credterm" id="credterm" type="text" size="3"
+									style="overflow: hidden; white-space: nowrap; text-align: right; position: relative; top: 0; left: 0; text-align: right;"
+									value="" maxlength="3" onfocus="doFocus(this)"
+									onhelp="return fieldHelp(&quot;credterm&quot;)"
+									onkeypress="return  digitsOnly(this, 0); "
+									onkeyup="return checkMaxLength(this)" decimal="0"
+									onpaste="return doPasteNumber(event);"
+									onblur="return doBlurNumber(event);"
+									class="input_cell bold form-control" tabindex="19">
+							</div>
+						</div>
+						<div class="col-md-2 col-md-offset-2">
+							<div class="form-group" style="width: 90px;">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 96px; height: 16px;">Credit&nbsp;Limit</div>
+								</label> <input name="crlimit" id="crlimit" type="text" size="13"
+									style="overflow: hidden; white-space: nowrap; text-align: right; position: relative; top: 0; left: 0; text-align: right;"
+									value="" maxlength="14" onfocus="doFocus(this)"
+									onhelp="return fieldHelp(&quot;crlimit&quot;)"
+									onkeypress="return  digitsOnly(this, 2); "
+									onkeyup="return checkMaxLength(this)" decimal="2"
+									onpaste="return doPasteNumber(event);"
+									onblur="return doBlurNumber(event);"
+									class="input_cell bold form-control" tabindex="20">
+							</div>
+						</div>
+						<div class="col-md-2"></div>
+						<div class="col-md-4">
+							<div class="form-group" style="width: 110px;">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 72px; height: 16px;">Territory</div>
+								</label>
+
+								<!-- 	<input class="form-control" -->
+
+
+								<div style="position: relative;">
+									<select name="chdrstcda" id="chdrstcda" value="" type="list"
+										style="width: 195.0px;" onfocus="doFocus(this)"
+										onhelp="return fieldHelp"
+										onclick="reWriteDescDropdown(this,?);"
+										class="codedescdropdown form-control" tabindex="21"><option
+											value="" title="---------Select---------">---------Select---------</option>
+										<option value="00" title="00--Not Applicable                ">00--Not
+											Applicable</option>
+										<option value="LF" title="LF--LOCAL FUND                    ">LF--LOCAL
+											FUND</option>
+										<option value="OF" title="OF--OFF SHORE FUND                ">OF--OFF
+											SHORE FUND</option>
+										<option value="SGF"
+											title="SGF--Singapore General Insurance Fu">SGF--Singapore
+											General Insurance Fu</option></select>
+								</div>
+
+
+								<!-- </input> -->
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 48px; height: 16px;">Source</div>
+								</label>
+								<div
+									style="overflow: hidden; background-color: rgb(238, 238, 238); width: 70px;"
+									id="chdrstcdb_div" class="form-control ellipsis"
+									onhelp="return fieldHelp(&quot;chdrstcdb&quot;)" title="   ">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4 col-md-offset-2">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 88px; height: 16px;">Major&nbsp;Class</div>
+								</label>
+								<div class="input-group" style="width: 80px;">
+
+									<!-- <input class="form-control" -->
+
+
+									<div style="position: relative;">
+										<select name="chdrstcdc" id="chdrstcdc" value="" type="list"
+											style="width: 195.0px;" onfocus="doFocus(this)"
+											onhelp="return fieldHelp" class="form-control" tabindex="22"><option
+												value="" title="---------Select---------">---------Select---------</option>
+											<option value="**L" title="**L                           ">**L
+											</option>
+											<option value="**S" title="**S                           ">**S
+											</option>
+											<option value="ACC" title="ACC                           ">ACC
+											</option>
+											<option value="ART" title="Affinity Group                ">Affinity
+												Group</option>
+											<option value="ENG" title="ENG                           ">ENG
+											</option>
+											<option value="FIR" title="FIR                           ">FIR
+											</option>
+											<option value="GT5" title="GT5                           ">GT5
+											</option>
+											<option value="GTC" title="GTC                           ">GTC
+											</option>
+											<option value="GTS" title="GTS                           ">GTS
+											</option>
+											<option value="GHL" title="Group  Health_GHL             ">Group
+												Health_GHL</option>
+											<option value="GCT" title="Group Credit Life_GCT         ">Group
+												Credit Life_GCT</option>
+											<option value="GDH" title="Group Daily Hsptl Csh Bnft_GDH">Group
+												Daily Hsptl Csh Bnft_GDH</option>
+											<option value="GEN" title="Group Endowment               ">Group
+												Endowment</option>
+											<option value="END" title="Group Endowment               ">Group
+												Endowment</option>
+											<option value="GRA" title="Group Gratuity                ">Group
+												Gratuity</option>
+											<option value="GHS" title="Group Health                  ">Group
+												Health</option>
+											<option value="GHC" title="Group Hospitalisation-GHC     ">Group
+												Hospitalisation-GHC</option>
+											<option value="GIP" title="Group Invstmnt Product_GIP    ">Group
+												Invstmnt Product_GIP</option>
+											<option value="GLF" title="Group Life                    ">Group
+												Life</option>
+											<option value="GMM" title="Group Major Medical           ">Group
+												Major Medical</option>
+											<option value="INZ" title="Group Pension                 ">Group
+												Pension</option>
+											<option value="GPS" title="Group Personal Accident       ">Group
+												Personal Accident</option>
+											<option value="GPA" title="Group Personal Accident_GPA   ">Group
+												Personal Accident_GPA</option>
+											<option value="GT3" title="Group Term 3                  ">Group
+												Term 3</option>
+											<option value="GTL" title="Group Term Life               ">Group
+												Term Life</option>
+											<option value="GT4" title="Group Term Product            ">Group
+												Term Product</option>
+											<option value="GT1" title="Group Term Superior           ">Group
+												Term Superior</option>
+											<option value="GDI" title="Group disability income       ">Group
+												disability income</option>
+											<option value="GTX" title="Grp Rtl Typ 1(NonLoan-Afinity)">Grp
+												Rtl Typ 1(NonLoan-Afinity)</option>
+											<option value="GTY" title="Grp Rtl Typ 2(NonLoan-Afinity)">Grp
+												Rtl Typ 2(NonLoan-Afinity)</option>
+											<option value="GHP" title="HealthCare-Group              ">HealthCare-Group
+											</option>
+											<option value="GHT" title="HealthPlus                    ">HealthPlus
+											</option>
+											<option value="IRH" title="Individual Retail Health      ">Individual
+												Retail Health</option>
+											<option value="ITL" title="Individual Term Life STD      ">Individual
+												Term Life STD</option>
+											<option value="MRT" title="Mortage Reducing term assuranc">Mortage
+												Reducing term assuranc</option>
+											<option value="MRA" title="Mortgage Reducing Trm Ass     ">Mortgage
+												Reducing Trm Ass</option>
+											<option value="PEN" title="Pension                       ">Pension
+											</option>
+											<option value="RAH" title="Retail Indemnity Health       ">Retail
+												Indemnity Health</option>
+											<option value="HGC" title="Smart Health Cover            ">Smart
+												Health Cover</option>
+											<option value="RMT" title="Smart Mortgage Insurance      ">Smart
+												Mortgage Insurance</option>
+											<option value="LGT" title="Smart Term Life               ">Smart
+												Term Life</option>
+											<option value="VTL" title="Smart Travel                  ">Smart
+												Travel</option>
+											<option value="GTB" title="Term B Version                ">Term
+												B Version</option>
+											<option value="TVL" title="Travel                        ">Travel
+											</option>
+											<option value="TRV" title="Travel Care                   ">Travel
+												Care</option>
+											<option value="VEH" title="VEH                           ">VEH
+											</option></select>
+									</div>
+
+
+									<!-- </input> -->
+								</div>
+							</div>
+						</div>
+						<!-- <div class="col-md-2"></div> -->
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 160px; height: 16px;">Distribution&nbsp;Channel</div>
+								</label>
+								<div class="input-group" style="width: 90px;">
+
+									<!-- <input class="form-control" -->
+
+
+									<div style="position: relative;">
+										<select name="chdrstcde" id="chdrstcde" value="" type="list"
+											style="width: 195.0px;" onfocus="doFocus(this)"
+											onhelp="return fieldHelp" class="form-control" tabindex="23"><option
+												value="" title="---------Select---------">---------Select---------</option>
+											<option value="0" title="Agent                         ">Agent
+											</option>
+											<option value="2" title="Bankassurance                 ">Bankassurance
+											</option>
+											<option value="1" title="Broker                        ">Broker
+											</option>
+											<option value="4" title="Direct Mail                   ">Direct
+												Mail</option>
+											<option value="3" title="Internet                      ">Internet
+											</option>
+											<option value="9" title="Other                         ">Other
+											</option>
+											<option value="AAA" title="Stat Code AAA                 ">Stat
+												Code AAA</option>
+											<option value="BBB" title="Stat Code BBB                 ">Stat
+												Code BBB</option>
+											<option value="CCC" title="Stat Code CCC                 ">Stat
+												Code CCC</option></select>
+									</div>
+
+
+									<!-- </input> -->
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>
+
+									<div class="label_txt"
+										style="position: relative; overflow-y: hidden; top: 0px; left: 0px; width: 128px; height: 16px;">Statistical&nbsp;Code</div>
+								</label>
+								<div class="input-group" style="width: 90px;">
+
+									<!-- <input class="form-control" -->
+
+
+
+									<!-- IBPGROUP-4298 -->
+									<select name="chdrstcdd" id="chdrstcdd" style="width: 195px"
+										class="form-control" tabindex="24">
+										<option value="">------Select-------</option>
+									</select>
+
+
+								</div>
+
+								<!-- </input> -->
+							</div>
+						</div>
+						<div class="col-md-3 col-md-offset-1">
+							<div class="form-group">
+
+								<label>Lines of Business</label>
+
+								<!-- <input class="form-control" -->
+								<div class="input-group" style="width: 90px;">
+
+
+									<select style="width: 120px; margin-left: 0px;" id="lob"
+										name="lob" type="list" onfocus="doFocus(this)"
+										onhelp="return fieldHelp(lob)" class="bold_cell form-control"
+										tabindex="25">
+										<option value="" title="---------Select---------" selected="">---------Select---------</option>
+										<option value="C" title="Composite">Composite</option>
+										<option value="G" title="General">General</option>
+										<option value="L" title="Life">Life</option>
+									</select>
+
+
+									<!-- </input> -->
+								</div>
+							</div>
+						</div>
+						<div class="col-md-1"></div>
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>Facultative RI Block Limit</label>
+								<div class="input-group">
+									<input name="blkLimit" id="blkLimit" type="text" size="10"
+										style="overflow: hidden; white-space: nowrap; text-align: right; position: relative; top: 0; left: 0; text-align: right;"
+										value="0" maxlength="10"
+										onfocus="doFocus(this),onFocusRemoveCommas(this)"
+										onhelp="return fieldHelp(&quot;blkLimit&quot;)"
+										onkeypress="return  digitsOnly(this, 0,true); "
+										onkeyup="return checkMaxLength(this)" decimal="0"
+										onpaste="return doPasteNumber(event,true);"
+										onblur="return doBlurNumber(event,true);"
+										class="input_cell bold form-control" tabindex="26">
+								</div>
+							</div>
+						</div>
+						<!-- GEPAS-15 START -->
+
+						<!-- GEPAS-15 END -->
+
+					</div>
+
+					<!-- </div> -->
+					<!-- GEPAS-124 -->
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label> PIAM No </label>
+								<div class="input-group">
+									<input name="licence" id="licence" type="text" size="15"
+										style="overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+										value="               " maxlength="15" onfocus="doFocus(this)"
+										onhelp="return fieldHelp(&quot;licence&quot;)"
+										onkeyup="return checkMaxLength(this)"
+										class="input_cell bold form-control" tabindex="27">
+								</div>
+							</div>
+						</div>
+						<div class="col-md-4">
+							<div class="form-group">
+
+								<label>Expiry Date</label>
+
+
+
+
+								<div class="input-group date form_date col-md-12"
+									data-date="12/11/2022" data-link-field="licnexdtDisp"
+									style="width: 150px;">
+									<input name="licnexdtDisp" id="licnexdtDisp" type="text"
+										size="10"
+										style="overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+										value="          " maxlength="10" onfocus="doFocus(this)"
+										onhelp="return fieldHelp(&quot;licnexdtDisp&quot;)"
+										onkeyup="return checkMaxLength(this)"
+										class="input_cell bold form-control" tabindex="28"> <span
+										class="input-group-addon"> <span
+										class="glyphicon glyphicon-calendar"></span>
+									</span>
+								</div>
+
+
+
+
+							</div>
+						</div>
+						<!-- <div class="col-md-1"></div> -->
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>Facultative RI Block Limit Balance</label>
+								<div title="0"
+									style="overflow: hidden; text-align: right; background-color: rgb(238, 238, 238); color: rgb(153, 153, 153); font-weight: bold; width: 40px;"
+									id="riAmtBalance_div" class="form-control ellipsis"
+									onhelp="return fieldHelp(&quot;riAmtBalance&quot;)">0</div>
+							</div>
+						</div>
+					</div>
+					<!-- IFSU-2084 starts -->
+
+					<!-- IFSU-2084 ends -->
+
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+
+								<label>Bank Account</label>
+								<div class="row">
+									<div class="col-md-3">
+										<div class="form-group">
+
+											<!-- <input class="form-control" -->
+											<div class="input-group">
+
+
+
+												<div style="position: relative;">
+													<select name="bankcode01" id="bankcode01" value=""
+														type="list" style="width: 140.0px;"
+														onfocus="doFocus(this)" onhelp="return fieldHelp"
+														class="form-control" tabindex="29"><option
+															value="" title="--Select--">--Select--</option>
+														<option value="10" title="JPY Dollar A/c                ">JPY
+															Dollar A/c</option>
+														<option value="TW" title="New Taiwan Dollar Bank        ">New
+															Taiwan Dollar Bank</option>
+														<option value="03" title="Rupiah    a/c                 ">Rupiah
+															a/c</option>
+														<option value="02" title="Sing Dollar A/C 02            ">Sing
+															Dollar A/C 02</option>
+														<option value="06" title="Sing Dollar A/c               ">Sing
+															Dollar A/c</option>
+														<option value="01" title="Sing Dollar A/c 01            ">Sing
+															Dollar A/c 01</option>
+														<option value="05" title="Sterling    A/c               ">Sterling
+															A/c</option>
+														<option value="28" title="Taiwan Dollar A/C             ">Taiwan
+															Dollar A/C</option>
+														<option value="04" title="US dollar   A/c               ">US
+															dollar A/c</option></select>
+												</div>
+
+
+												<!-- </input> -->
+											</div>
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+
+											<!-- 	<input class="form-control" -->
+
+
+
+											<div style="position: relative;">
+												<select name="bankcode02" id="bankcode02" value=""
+													type="list" style="width: 140.0px;" onfocus="doFocus(this)"
+													onhelp="return fieldHelp" class="form-control"
+													tabindex="30"><option value="" title="--Select--">--Select--</option>
+													<option value="10" title="JPY Dollar A/c                ">JPY
+														Dollar A/c</option>
+													<option value="TW" title="New Taiwan Dollar Bank        ">New
+														Taiwan Dollar Bank</option>
+													<option value="03" title="Rupiah    a/c                 ">Rupiah
+														a/c</option>
+													<option value="02" title="Sing Dollar A/C 02            ">Sing
+														Dollar A/C 02</option>
+													<option value="06" title="Sing Dollar A/c               ">Sing
+														Dollar A/c</option>
+													<option value="01" title="Sing Dollar A/c 01            ">Sing
+														Dollar A/c 01</option>
+													<option value="05" title="Sterling    A/c               ">Sterling
+														A/c</option>
+													<option value="28" title="Taiwan Dollar A/C             ">Taiwan
+														Dollar A/C</option>
+													<option value="04" title="US dollar   A/c               ">US
+														dollar A/c</option></select>
+											</div>
+
+
+											<!-- </input> -->
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+
+											<!-- <input class="form-control" -->
+
+
+
+											<div style="position: relative;">
+												<select name="bankcode03" id="bankcode03" value=""
+													type="list" style="width: 140.0px;" onfocus="doFocus(this)"
+													onhelp="return fieldHelp" class="form-control"
+													tabindex="31"><option value="" title="--Select--">--Select--</option>
+													<option value="10" title="JPY Dollar A/c                ">JPY
+														Dollar A/c</option>
+													<option value="TW" title="New Taiwan Dollar Bank        ">New
+														Taiwan Dollar Bank</option>
+													<option value="03" title="Rupiah    a/c                 ">Rupiah
+														a/c</option>
+													<option value="02" title="Sing Dollar A/C 02            ">Sing
+														Dollar A/C 02</option>
+													<option value="06" title="Sing Dollar A/c               ">Sing
+														Dollar A/c</option>
+													<option value="01" title="Sing Dollar A/c 01            ">Sing
+														Dollar A/c 01</option>
+													<option value="05" title="Sterling    A/c               ">Sterling
+														A/c</option>
+													<option value="28" title="Taiwan Dollar A/C             ">Taiwan
+														Dollar A/C</option>
+													<option value="04" title="US dollar   A/c               ">US
+														dollar A/c</option></select>
+											</div>
+
+
+
+											<!-- </input> -->
+										</div>
+									</div>
+									<div class="col-md-3">
+										<div class="form-group">
+
+											<!-- <input class="form-control" -->
+
+
+
+											<div style="position: relative;">
+												<select name="bankcode04" id="bankcode04" value=""
+													type="list" style="width: 140.0px;" onfocus="doFocus(this)"
+													onhelp="return fieldHelp" class="form-control"
+													tabindex="32"><option value="" title="--Select--">--Select--</option>
+													<option value="10" title="JPY Dollar A/c                ">JPY
+														Dollar A/c</option>
+													<option value="TW" title="New Taiwan Dollar Bank        ">New
+														Taiwan Dollar Bank</option>
+													<option value="03" title="Rupiah    a/c                 ">Rupiah
+														a/c</option>
+													<option value="02" title="Sing Dollar A/C 02            ">Sing
+														Dollar A/C 02</option>
+													<option value="06" title="Sing Dollar A/c               ">Sing
+														Dollar A/c</option>
+													<option value="01" title="Sing Dollar A/c 01            ">Sing
+														Dollar A/c 01</option>
+													<option value="05" title="Sterling    A/c               ">Sterling
+														A/c</option>
+													<option value="28" title="Taiwan Dollar A/C             ">Taiwan
+														Dollar A/C</option>
+													<option value="04" title="US dollar   A/c               ">US
+														dollar A/c</option></select>
+											</div>
+
+
+
+											<!-- </input> -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-3">
+							<div class="form-group">
+								<div class="input-group">
+
+
+									<div style="position: relative;">
+										<select name="bankcode05" id="bankcode05" value="" type="list"
+											style="width: 140.0px;" onfocus="doFocus(this)"
+											onhelp="return fieldHelp" class="form-control" tabindex="33"><option
+												value="" title="--Select--">--Select--</option>
+											<option value="10" title="JPY Dollar A/c                ">JPY
+												Dollar A/c</option>
+											<option value="TW" title="New Taiwan Dollar Bank        ">New
+												Taiwan Dollar Bank</option>
+											<option value="03" title="Rupiah    a/c                 ">Rupiah
+												a/c</option>
+											<option value="02" title="Sing Dollar A/C 02            ">Sing
+												Dollar A/C 02</option>
+											<option value="06" title="Sing Dollar A/c               ">Sing
+												Dollar A/c</option>
+											<option value="01" title="Sing Dollar A/c 01            ">Sing
+												Dollar A/c 01</option>
+											<option value="05" title="Sterling    A/c               ">Sterling
+												A/c</option>
+											<option value="28" title="Taiwan Dollar A/C             ">Taiwan
+												Dollar A/C</option>
+											<option value="04" title="US dollar   A/c               ">US
+												dollar A/c</option></select>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="form-group">
+
+								<label>Skip in Auto Commission Payment</label> <input
+									type="checkbox" name="zskpautoc" value="Y"
+									onfocus="doFocus(this)" onhelp="return fieldHelp(zskpautoc)"
+									onkeyup="return checkMaxLength(this)" class="UICheck"
+									onclick="handleCheckBox('zskpautoc')" tabindex="34"> <input
+									type="checkbox" name="zskpautoc" value=" " checked=""
+									style="visibility: hidden; margin-top: -13px; margin-left: 13px;"
+									onclick="handleCheckBox('zskpautoc')" tabindex="35">
+
+
+
+							</div>
+						</div>
+					</div>
+					<!-- GEPAS-124 -->
+				</div>
+				<div style="visibility: hidden; position: fixed;">Major Class
+
+
+				</div>
+			</div>
+		</div>
+		<div id="navigateButton" class="text-right"
+			style="float: right !important; display: block;">
+
+
+
+			<button id="exitbutton" style="margin-right: 2px !important;"
+				type="button" class="btn btn-danger btn-sm"
+				onclick="doAction('PFKEY03');" tabindex="36">Exit</button>
+			<button id="refreshbutton" type="button" class="btn btn-sm"
+				style="color: #fff;; background-color: #5bc0de; border-color: #46b8da; margin-right: 2px !important;"
+				onclick="doAction('PFKEY05');" tabindex="37">Refresh</button>
+			<button id="continuebutton" style="margin-right: 2px !important;"
+				type="button" class="btn btn-success btn-sm"
+				onclick="doAction('PFKEY0');" tabindex="38">Continue</button>
+
+
+		</div>
+	</form>
+</body>
+</html>

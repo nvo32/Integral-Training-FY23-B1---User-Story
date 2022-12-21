@@ -1,0 +1,134 @@
+package US.VHN.daoImpl;
+
+import java.sql.Connection;
+import java.sql.DatabaseMetaData;
+import java.sql.Date;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import US.VHN.dao.ClientDAO;
+import US.VHN.model.Client;
+import US.VHN.model.Country;
+import US.VHN.model.Gender;
+import US.VHN.model.MartialStatus;
+
+public class ClientDAOImpl implements ClientDAO {
+
+	private static String dbURL = "jdbc:sqlserver://localhost:1433;DatabaseName=US_Assignment";
+	private static String user = "huynguyen";
+	private static String pass = "123456";
+
+	protected Connection getConnection() throws ClassNotFoundException {
+		Connection conn = null;
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
+			conn = DriverManager.getConnection(dbURL, user, pass);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return conn;
+	}
+
+	@Override
+	public List<Country> getListCountry() {
+
+		List<Country> listCountry = new ArrayList<>();
+
+		try (Connection connection = getConnection(); Statement stmt = connection.createStatement();) {
+
+			ResultSet rs = stmt.executeQuery("select * from Country");
+			while (rs.next()) {
+				Country a = new Country(rs.getInt(1), rs.getString(2));
+				listCountry.add(a);
+			}
+			connection.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listCountry;
+	}
+
+	@Override
+	public Boolean addClient(Client client) throws SQLException {
+
+		try (Connection connection = getConnection();
+				PreparedStatement preparedStatement = connection.prepareStatement(
+						"INSERT INTO Client (clntnum, firstname, lastname, gender, birthday, idNum, address, marritalStatus, country)\r\n"
+								+ "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+			preparedStatement.setString(1, client.getClntnum());
+			preparedStatement.setString(2, client.getFirstname());
+			preparedStatement.setString(3, client.getLastname());
+			preparedStatement.setString(4, client.getGender());
+			preparedStatement.setString(5, client.getBirthday());
+			preparedStatement.setString(6, client.getIdNum());
+			preparedStatement.setString(7, client.getAddress());
+			preparedStatement.setString(8, client.getMarritalStatus());
+			preparedStatement.setString(9, client.getCountry());
+			
+			
+			preparedStatement.executeUpdate();System.out.println(preparedStatement);
+			connection.close();
+			return true;
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			return true;
+		} 
+	}
+
+	@Override
+	public List<Gender> getListGender() {
+		List<Gender> listGender = new ArrayList<>();
+
+		try (Connection connection = getConnection(); Statement stmt = connection.createStatement();) {
+
+			ResultSet rs = stmt.executeQuery("select * from Gender");
+			while (rs.next()) {
+				Gender a = new Gender(rs.getString(1), rs.getString(2));
+				listGender.add(a);
+			}
+			connection.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listGender;
+	}
+
+	@Override
+	public List<MartialStatus> getListMartialStatus() {
+		List<MartialStatus> listMartialStatus = new ArrayList<>();
+
+		try (Connection connection = getConnection(); Statement stmt = connection.createStatement();) {
+
+			ResultSet rs = stmt.executeQuery("select * from MartialStatus");
+			while (rs.next()) {
+				MartialStatus a = new MartialStatus(rs.getString(1), rs.getString(2));
+				listMartialStatus.add(a);
+			}
+			connection.close();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return listMartialStatus;
+	}
+
+	@Override
+	public Client selectClient(String clntnum) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+encoding//WebContent/view/client/InqClient.jsp=UTF-8
+encoding//WebContent/view/client/clients.jsp=UTF-8
+encoding//src/US/VHN/connect/jdbc.java=UTF-8
+encoding//src/US/VHN/daoImpl/ClientDAOImpl.java=UTF-8

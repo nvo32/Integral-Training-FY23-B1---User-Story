@@ -1,0 +1,116 @@
+package US.VHN.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import US.VHN.daoImpl.ClientDAOImpl;
+import US.VHN.daoImpl.PolicyDAOImpl;
+import US.VHN.model.Client;
+import US.VHN.model.PolicyMotor;
+
+public class AgentsController extends HttpServlet {
+
+	private static final long serialVersionUID = 1L;
+
+	public AgentsController() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("view/agent/agent.jsp");
+		rd.forward(request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		String gpoltyp = request.getParameter("gpoltyp");
+		String action = request.getParameter("action");
+		String effdateDisp = request.getParameter("effdateDisp");
+		String cownsel01 = request.getParameter("cownsel01");
+		System.out.println(gpoltyp + "||" + action + "||" + effdateDisp + "||" + cownsel01);
+
+		if (action.contentEquals("A") && effdateDisp.isBlank() == false && gpoltyp.isBlank() == false) {
+
+			HttpSession session = request.getSession();
+
+			session.setAttribute("effdateDisp", effdateDisp);
+			session.setAttribute("gpoltyp", gpoltyp);
+
+			session.setMaxInactiveInterval(30 * 60);
+
+			response.sendRedirect("newpolicy");
+		}
+		
+		if (action.contentEquals("H") && cownsel01.isBlank() == false ) {
+
+			PolicyDAOImpl c = new PolicyDAOImpl();
+			PolicyMotor policyMotor = new PolicyMotor();
+			
+			try {
+				policyMotor = c.selectPolicy(cownsel01);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			
+			if (policyMotor != null) {
+				System.out.print(policyMotor);
+				String statdets = policyMotor.getStatdets();
+				String InceptionDate = policyMotor.getInceptionDate();
+				String ExpiryDate = policyMotor.getExpiryDate();
+				String PolicyOwner = policyMotor.getPolicyOwner();
+				String EngineNo = policyMotor.getEngineNo();
+				String ChassisNo = policyMotor.getChassisNo();
+				String VehicleRegisNo = policyMotor.getVehicleRegisNo();
+				String BillingCurrency = policyMotor.getBillingCurrency();
+				String SumInsured = policyMotor.getSumInsured();
+				String Rate = policyMotor.getRate();
+				String AnnualPremium = policyMotor.getAnnualPremium();
+				String PostedPremium = policyMotor.getPostedPremium();
+				
+				HttpSession session = request.getSession();
+				
+				session.setAttribute("cownsel01", cownsel01);
+				session.setAttribute("statdets", statdets);
+				session.setAttribute("InceptionDate", InceptionDate);
+				session.setAttribute("ExpiryDate", ExpiryDate);
+				session.setAttribute("PolicyOwner", PolicyOwner);
+				session.setAttribute("EngineNo", EngineNo);
+				session.setAttribute("ChassisNo", ChassisNo);
+				session.setAttribute("VehicleRegisNo", VehicleRegisNo);
+				session.setAttribute("BillingCurrency", BillingCurrency);
+				session.setAttribute("SumInsured", SumInsured);
+				session.setAttribute("Rate", Rate);
+				session.setAttribute("AnnualPremium", AnnualPremium);
+				session.setAttribute("PostedPremium", PostedPremium);
+
+				session.setMaxInactiveInterval(30 * 60);
+
+				response.sendRedirect("ModPolicy");
+		}
+
+	}
+		if (action.contentEquals("F") && cownsel01.isBlank() == false ) {
+
+			PolicyDAOImpl c = new PolicyDAOImpl();
+			try {
+				if(c.issuePolicy(cownsel01)) {
+					response.sendRedirect("login");
+				}
+				response.sendRedirect("agents");
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+				response.sendRedirect("agents");
+			}
+			
+		}
+	}
+}

@@ -1,0 +1,36 @@
+package US.VHN.controller;
+
+import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class InqClientController {
+	private static final long serialVersionUID = 1L;
+    
+    public InqClientController() {
+        super();
+    }
+
+    
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher rd = request.getRequestDispatcher("view/client/InqClient.jsp");
+		rd.forward(request, response);
+	}
+
+/*	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String clntnum = request.getParameter("clntnum");
+		String action = request.getParameter("action");
+		String secuityno = request.getParameter("secuityno");
+		System.out.print(clntnum + action);
+		if (action.contentEquals("A")) {
+			response.sendRedirect("AddClient");
+		}
+		if (action.contentEquals("E") && clntnum.isBlank()==false) {
+			response.sendRedirect("InqClient");
+		}
+	
+	*/
+}

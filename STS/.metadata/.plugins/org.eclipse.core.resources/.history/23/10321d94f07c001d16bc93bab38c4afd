@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>MVCProject1</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+		<servlet-name>LoginController</servlet-name>
+		<servlet-class>US.VHN.controller.LoginController
+		</servlet-class>
+	</servlet>
+	<!-- Định nghĩa đường dẫn truy cập vào Servlet này -->
+	<servlet-mapping>
+		<servlet-name>LoginController</servlet-name>
+		<url-pattern>/login</url-pattern>
+	</servlet-mapping>
+	<!-- Tương tự như trên -->
+	<servlet>
+		<servlet-name>ClientsController</servlet-name>
+		<servlet-class>US.VHN.controller.ClientsController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ClientsController</servlet-name>
+		<url-pattern>/clients</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AddClientController</servlet-name>
+		<servlet-class>US.VHN.controller.AddClientController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddClientController</servlet-name>
+		<url-pattern>/AddClient</url-pattern>
+	</servlet-mapping>
+	<!-- InqueryClient -->
+	<servlet>
+		<servlet-name>InqClientController</servlet-name>
+		<servlet-class>US.VHN.controller.InqClientController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>InqClientController</servlet-name>
+		<url-pattern>/InqClient</url-pattern>
+	</servlet-mapping>
+	<!-- Modifier Client -->
+	<servlet>
+		<servlet-name>ModClientController</servlet-name>
+		<servlet-class>US.VHN.controller.ModClientController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModClientController</servlet-name>
+		<url-pattern>/ModClient</url-pattern>
+	</servlet-mapping>
+	<!-- agent policy -->
+	<servlet>
+		<servlet-name>AgentsController</servlet-name>
+		<servlet-class>US.VHN.controller.AgentsController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AgentsController</servlet-name>
+		<url-pattern>/agents</url-pattern>
+	</servlet-mapping>
+	<!-- new policy -->
+	<servlet>
+		<servlet-name>NewPolicyController</servlet-name>
+		<servlet-class>US.VHN.controller.NewPolicyController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NewPolicyController</servlet-name>
+		<url-pattern>/newpolicy</url-pattern>
+	</servlet-mapping>
+	<!-- Modify policy -->
+	<servlet>
+		<servlet-name>ModPolicyController</servlet-name>
+		<servlet-class>US.VHN.controller.ModPolicyController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModPolicyController</servlet-name>
+		<url-pattern>/ModPolicy</url-pattern>
+	</servlet-mapping>
+	<!-- create agent  -->
+	<servlet>
+		<servlet-name>CreateAgentController</servlet-name>
+		<servlet-class>US.VHN.controller.CreateAgentController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateAgentController</servlet-name>
+		<url-pattern>/createAgents</url-pattern>
+	</servlet-mapping>
+	<!-- create agent account  -->
+	<servlet>
+		<servlet-name>CreateAccountController</servlet-name>
+		<servlet-class>US.VHN.controller.CreateAccountController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CreateAccountController</servlet-name>
+		<url-pattern>/CreateAccount</url-pattern>
+	</servlet-mapping>
+	<!-- EnqAgent -->
+	<servlet>
+		<servlet-name>EnqAgentController</servlet-name>
+		<servlet-class>US.VHN.controller.EnqAgentController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EnqAgentController</servlet-name>
+		<url-pattern>/EnqAgent</url-pattern>
+	</servlet-mapping>
+	<!-- ModAgent -->
+	<servlet>
+		<servlet-name>ModAgentController</servlet-name>
+		<servlet-class>US.VHN.controller.ModAgentController
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ModAgentController</servlet-name>
+		<url-pattern>/ModAgent</url-pattern>
+	</servlet-mapping>
+</web-app>

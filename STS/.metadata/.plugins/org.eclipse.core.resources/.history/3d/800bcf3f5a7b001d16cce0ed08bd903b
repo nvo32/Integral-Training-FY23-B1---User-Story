@@ -1,0 +1,22 @@
+package US.VHN.dao;
+
+import java.sql.Date;
+import java.sql.SQLException;
+import java.util.List;
+
+import US.VHN.model.Client;
+import US.VHN.model.Country;
+import US.VHN.model.Gender;
+import US.VHN.model.MartialStatus;
+
+public interface ClientDAO {
+	public List<Country> getListCountry() ;
+	
+	public List<Gender> getListGender() ;
+	
+	public List<MartialStatus> getListMartialStatus() ;
+	
+	public Boolean addClient(Client client) throws SQLException;
+	
+	public Client selectClient(String clntnum) throws SQLException;
+}

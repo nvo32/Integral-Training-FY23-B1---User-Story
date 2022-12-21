@@ -1,0 +1,17 @@
+package US.VHN.model;
+
+public class PolicyMotor {
+	private String polnum;
+	private String statdets;
+	private String InceptionDate;
+	private String ExpiryDate;
+	private String PolicyOwner;
+	private String EngineNo;
+	private String ChassisNo;
+	private String VehicleRegisNo;
+	private String BillingCurrency;
+	private String SumInsured;
+	private String Rate;
+	private String AnnualPremium;
+	private String PostedPremium;
+}

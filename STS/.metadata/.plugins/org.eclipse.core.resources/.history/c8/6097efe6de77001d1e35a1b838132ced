@@ -1,0 +1,38 @@
+package US.VHN.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import US.VHN.daoImpl.ClientDAOImpl;
+import US.VHN.model.Country;
+import US.VHN.model.Gender;
+import US.VHN.model.MartialStatus;
+
+public class ModClientController extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	public ModClientController() {
+		super();
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		ClientDAOImpl clients = new ClientDAOImpl();
+		List<Country> listCountry = clients.getListCountry();
+		List<Gender> listGender = clients.getListGender();
+		List<MartialStatus> listMartialStatus = clients.getListMartialStatus();
+		request.setAttribute("listCountry", listCountry);
+		request.setAttribute("listGender", listGender);
+		request.setAttribute("listMartialStatus", listMartialStatus);
+		
+		RequestDispatcher rd = request.getRequestDispatcher("view/client/ModClient.jsp");
+		rd.forward(request, response);
+	}
+}

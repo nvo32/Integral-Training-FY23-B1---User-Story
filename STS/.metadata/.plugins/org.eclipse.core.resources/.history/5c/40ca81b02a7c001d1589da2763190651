@@ -1,0 +1,15 @@
+package US.VHN.dao;
+
+import java.sql.SQLException;
+
+import US.VHN.model.Agent;
+import US.VHN.model.Client;
+
+public class AgentDAO {
+	
+	public Boolean addAgent(Agent agent) throws SQLException;
+
+	public Boolean updateAgent(Agent agent) throws SQLException;
+
+	public Client selectAgent(String agent) throws SQLException;
+}

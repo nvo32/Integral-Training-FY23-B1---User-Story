@@ -1,0 +1,83 @@
+package US.VHN.daoImpl;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import US.VHN.dao.PolicyDAO;
+import US.VHN.model.Client;
+import US.VHN.model.PolicyMotor;
+
+public class PolicyDAOImpl implements PolicyDAO {
+
+	private static String dbURL = "jdbc:sqlserver://localhost:1433;DatabaseName=US_Assignment";
+	private static String user = "huynguyen";
+	private static String pass = "123456";
+
+	protected Connection getConnection() throws ClassNotFoundException {
+		Connection conn = null;
+
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");
+			DriverManager.registerDriver(new com.microsoft.sqlserver.jdbc.SQLServerDriver());
+			conn = DriverManager.getConnection(dbURL, user, pass);
+		} catch (SQLException ex) {
+			ex.printStackTrace();
+
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return conn;
+	}
+
+	@Override
+	public Boolean addPolicy(PolicyMotor policyMotor) throws SQLException {
+		/*
+		 * try (Connection connection = getConnection(); PreparedStatement
+		 * preparedStatement = connection.prepareStatement(
+		 * "INSERT INTO Client (polnum, statdets, InceptionDate, ExpiryDate, PolicyOwner, EngineNo, ChassisNo, VehicleRegisNo, BillingCurrency, SumInsured, Rate, AnnualPremium, PostedPremium)\r\n"
+		 * + "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")) {
+		 * preparedStatement.setString(1, policyMotor.getPolnum());
+		 * preparedStatement.setString(2, policyMotor.getStatdets());
+		 * preparedStatement.setString(3, policyMotor.getInceptionDate());
+		 * preparedStatement.setString(4, policyMotor.getExpiryDate());
+		 * preparedStatement.setString(5, policyMotor.getPolicyOwner());
+		 * preparedStatement.setString(6, policyMotor.getEngineNo());
+		 * preparedStatement.setString(7, policyMotor.getChassisNo());
+		 * preparedStatement.setString(8, policyMotor.getVehicleRegisNo());
+		 * preparedStatement.setString(9, policyMotor.getBillingCurrency());
+		 * preparedStatement.setString(10, policyMotor.getSumInsured());
+		 * preparedStatement.setString(11, policyMotor.getRate());
+		 * preparedStatement.setString(12, policyMotor.getAnnualPremium());
+		 * preparedStatement.setString(13, policyMotor.getPostedPremium());
+		 * 
+		 * preparedStatement.executeUpdate(); System.out.println(preparedStatement);
+		 * connection.close(); return true; } catch (ClassNotFoundException e) { // TODO
+		 * Auto-generated catch block e.printStackTrace(); return true; }
+		 */
+		
+			System.out.print("BEN IMPLE" + policyMotor.getStatdets());
+			System.out.print("BEN IMPLE" +  policyMotor.getInceptionDate());
+			System.out.print("BEN IMPLE" + policyMotor.getExpiryDate());
+			System.out.print("BEN IMPLE" + policyMotor.getPolicyOwner());
+			System.out.print("BEN IMPLE" + policyMotor.getEngineNo());
+			System.out.print("BEN IMPLE" + policyMotor.getChassisNo());
+			System.out.print("BEN IMPLE" + policyMotor.getVehicleRegisNo());
+			System.out.print("BEN IMPLE" + policyMotor.getBillingCurrency());
+			System.out.print("BEN IMPLE" + policyMotor.getSumInsured());
+			System.out.print("BEN IMPLE" +  policyMotor.getRate());
+			System.out.print("BEN IMPLE" +  policyMotor.getAnnualPremium());
+			System.out.print("BEN IMPLE" +  policyMotor.getPostedPremium());
+			return true;
+
+	}
+
+	@Override
+	public Client selectPolicy(String clntnum) throws SQLException {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

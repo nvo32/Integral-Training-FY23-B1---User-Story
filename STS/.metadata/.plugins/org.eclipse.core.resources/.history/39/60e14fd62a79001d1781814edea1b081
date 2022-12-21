@@ -1,0 +1,316 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<!-- nvo32 -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<%-- <link rel="stylesheet" href="<%=request.getContextPath()%>/templates/main.css"> --%>
+<link href="bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="bootstrap/sb/vendor/metisMenu/metisMenu.min.css"
+	rel="stylesheet">
+<link href="bootstrap/sb/dist/css/sb-admin-2.css" rel="stylesheet">
+<link href="bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link href="bootstrap/integral/integral-admin.css" rel="stylesheet"
+	type="text/css">
+
+<script language="javaScript" src="js/xmlReader.js"></script>
+<script src="bootstrap/sb/vendor/jquery/jquery.js"></script>
+
+<!-- sb admin begin -->
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/metisMenu/metisMenu.min.css"
+	rel="stylesheet">
+<link href="/csc-group-asia-web/bootstrap/sb/dist/css/sb-admin-2.css"
+	rel="stylesheet">
+<link href="/csc-group-asia-web/bootstrap/sb/vendor/morrisjs/morris.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="/csc-group-asia-web/bootstrap/datetimepicker/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" media="screen">
+<link href="/csc-group-asia-web/bootstrap/integral/integral-admin.css"
+	rel="stylesheet" type="text/css">
+<!-- IGROUP-4208 -->
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/jquery/jquery.min.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="/csc-group-asia-web/bootstrap/sb/dist/js/sb-admin-2.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/datetimepicker/bootstrap-datetimepicker.min.js"
+	charset="UTF-8"></script>
+<script src="/csc-group-asia-web/bootstrap/integral/integral-admin.js"></script>
+<!-- IGROUP-4208 -->
+
+<!-- YY -->
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<!-- sb admin end -->
+<!-- End nvo32 -->
+<title>DXC</title>
+</head>
+<body>
+	<!-- nvo32 -->
+	<form name="form1" method="post" action="/csc-group-asia-web/process"
+		target="_top" onsubmit="return suppressit();"
+		onclick="selectSpecial()">
+		<div class="row"
+			style="border: 0px; margin: 0 0 0 0; background-color: #5f249f">
+			<div class="col-md-1"
+				style="width: 50px !important; padding-left: 15px; padding-right: 0px; border: 0px; top: 3px;">
+				<span style="font-size: 30px; cursor: pointer; color: #fff"
+					id="openNav-btn" onmouseover="openNav()">☰</span>
+			</div>
+
+			<div class="col-md-1"
+				style="width: 80px !important; padding-left: 15px; padding-right: 0px; border: 0px; top: -2px;">
+				<img src="/csc-group-asia-web/screenFiles/DXC_newlogo.png"
+					width="55px" border="0">
+			</div>
+			<div class="col-md-2"
+				style="width: 140px !important; padding-left: 0px; padding-right: 0px; border: 0px; top: 5px;">
+				<div
+					style="font-size: 15px; font-weight: bold; color: white !important;">DXC
+					Assure Policy</div>
+				<table
+					style="font-size: 10px !important; font-weight: bold; width: 91%;">
+					<tbody>
+						<tr>
+							<td style="color: #ffffff !important;">1.0-SNAPSHOT</td>
+							<td style="text-align: right; color: #fff !important;"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+			<div class="col-md-3"></div>
+			<!-- feedback version -->
+			<div class="col-md-6" id="topPanel">
+				<nav class="navbar navbar-default navbar-static-top"
+					role="navigation"
+					style="margin-bottom: 0; margin-top: -2px !important; background-color: #5f249f;">
+					<!-- IBPGROUP-2221 -->
+
+					<ul class="nav navbar-top-links navbar-right"
+						style="background-color: #5f249f; margin-top: 1px !important;">
+						<!-- IBPGROUP-2221 -->
+
+
+						<ul class="nav navbar-top-links navbar-right"
+							style="background-color: #5f249f; margin-top: 1px !important;">
+
+							<li><a href="Sisense URL not configured" target=""
+								style="color: #fff; font-size: 20px !important;" title="Sisense"><i
+									class="fa fa-bar-chart" style="color: white;"></i></a></li>
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Product Stage"><i class="fa fa-briefcase"
+									style="color: white;"></i></a></li>
+							<!-- IGROUP-6101 -->
+							-
+							<!-- IGROUP-5651 end-->
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Home"><i class="fa fa-home" style="color: white;"></i></a></li>
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Session Info"><i class="fa fa-info-circle"
+									style="color: white;"></i></a></li>
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Help"><i class="fa fa-question-circle"
+									style="color: white;"></i></a></li>
+							<li><a href="javascript:;" onclick=""
+								style="color: #fff; font-size: 20px !important; top: 2px;"
+								title="Logout"><i class="fa fa-sign-out"
+									style="color: white;"></i></a></li>
+
+							<li class="userInfo"
+								title="Login time :&nbsp;07/12/2022&nbsp;at&nbsp;10:15:36Business Date:12/11/2022">
+								<a href="#"> <span class="glyphicon glyphicon-user"
+									style="color: white; top: 2px;"></span> <span
+									style="padding-left: 10px; color: white; top: 2px;">PBHARDAWA</span>
+									<!-- IGROUP-4177 -->
+							</a>
+							</li>
+						</ul>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</form>
+	<!-- End nvo32 -->
+	<h1 style="margin-left: 20px;">New Business - Sub Menu</h1>
+	<form action="<%=request.getContextPath()%>/newpolicy" method="post">
+		<div class="container" style="margin-top: 20px; display: block;">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<img
+						src="/csc-group-asia-web/screenFiles/eng/menu/Input_icon02.png"
+						height="25" title="Input">Input
+				</div>
+
+				<div class="panel-body panel-subMenu">
+					<div class="row">
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>
+									<div class="label_txt" style="position: relative; bottom: 3px;">Policy
+										Number</div>
+								</label>
+								<div class="input-group" style="max-width: 120px">
+									<input name="cownsel01" id="cownsel01" type="text" size="10"
+										style="padding-top: 3px; overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+										value="          " maxlength="10" class="form-control"
+										tabindex="2"> <span class="input-group-btn">
+										<button class="btn btn-info" style="font-size: 19px;"
+											type="button">
+											<i class="glyphicon glyphicon-search" aria-hidden="true"></i>
+										</button>
+									</span>
+
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4">
+							<div class="form-group">
+								<label>
+									<div class="label_txt" style="position: relative; bottom: 3px;">Policy
+										Type</div>
+								</label>
+								<div class="input-group">
+
+									<!-- IGroup-937 Begin -->
+									<div style="position: relative;">
+										<select name="gpoltyp" id="gpoltyp" value="" type="list"
+											style="width: 250.0px;" class="codedescdropdown form-control"
+											tabindex="4"><option value=""
+												title="---------Select---------">---------Select---------</option>
+											<option value="PolicyMotor" title="Affinity Group">Policy
+												Motor</option>
+										</select>
+									</div>
+									<!-- IGroup-937 End -->
+
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label>
+									<div class="label_txt" style="position: relative; bottom: 3px;">Effective
+										Date</div>
+								</label>
+								<div class="input-group date form_date col-md-10"
+									data-date="12/11/2022" data-link-field="effdateDisp">
+									<input name="effdateDisp" id="effdateDisp" type="text"
+										size="10"
+										style="overflow: hidden; white-space: nowrap; position: relative; top: 0; left: 0; text-align: left;"
+										value="" maxlength="10" onfocus="doFocus(this)"
+										class="input_cell bold form-control" tabindex="5"> <span
+										class="input-group-addon"><span
+										class="glyphicon glyphicon-calendar"></span></span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+
+		<div class="panel panel-default secondPanel" style="height: auto;">
+			<div class="panel-heading">
+				<img
+					src="/csc-group-asia-web/screenFiles/eng/menu/Action_icon02.png"
+					height="25" title="Actions">Action
+			</div>
+
+			<div class="panel-body panel-subMenu">
+				<div class="row row-subMenu">
+					<div class="col-md-3">
+
+						<label class="radio-inline">
+							<div
+								style="position: relative; top: 2px; left: 0px; height: 17px;">
+								<input type="radio" name="action" id="label_action_A" value="A"
+									onhelp="return fieldHelp(&quot;action&quot;)" checked=""
+									style="height: 17px; vertical-align: bottom;" tabindex="16"><label
+									for="label_action_A"
+									style="font-weight: bold; height: 100% !important; height: 90%;">Work
+									With Policy</label>
+							</div>
+						</label>
+
+					</div>
+				</div>
+
+				<div class="row row-subMenu">
+					<div class="col-md-3">
+						<label class="radio-inline"><div
+								style="position: relative; top: 2px; left: 0px; height: 17px;">
+								<input type="radio" name="action" id="label_action_F" value="F"
+									onhelp="return fieldHelp(&quot;action&quot;)"
+									style="height: 17px; vertical-align: bottom;" tabindex="21"><label
+									for="label_action_F"
+									style="font-weight: bold; height: 100% !important; height: 90%;">Issue
+									Policy</label>
+							</div> </label>
+					</div>
+
+					<div class="col-md-3">
+						<label class="radio-inline">
+							<div
+								style="position: relative; top: 2px; left: 0px; height: 17px;">
+								<input type="radio" name="action" id="label_action_H" value="H"
+									onhelp="return fieldHelp(&quot;action&quot;)"
+									style="height: 17px; vertical-align: bottom;" tabindex="23"><label
+									for="label_action_H"
+									style="font-weight: bold; height: 100% !important; height: 90%;">Delete
+									Policy</label>
+							</div>
+						</label>
+
+					</div>
+
+				</div>
+
+				<div class="row row-subMenu"></div>
+
+			</div>
+
+		</div>
+
+
+		<div id="navigateButton" class="text-right"
+			style="float: right !important; display: block;">
+
+
+			<button id="exitbutton" style="margin-right: 2px !important;"
+				type="button" class="btn btn-danger btn-sm">Exit</button>
+			<button id="refreshbutton" type="button" class="btn btn-sm"
+				style="color: #fff;; background-color: #5bc0de; border-color: #46b8da; margin-right: 2px !important;">Refresh</button>
+			<button id="continuebutton" style="margin-right: 2px !important;"
+				type="submit" class="btn btn-success btn-sm">Continue</button>
+		</div>
+	</form>
+</body>
+</html>

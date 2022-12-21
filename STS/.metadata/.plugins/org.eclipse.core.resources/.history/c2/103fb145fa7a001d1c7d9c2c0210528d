@@ -1,0 +1,18 @@
+package US.VHN.dao;
+
+import java.sql.SQLException;
+import java.util.List;
+
+import US.VHN.model.Client;
+import US.VHN.model.Country;
+import US.VHN.model.Gender;
+import US.VHN.model.MartialStatus;
+import US.VHN.model.PolicyMotor;
+
+public interface PolicyDAO {
+	
+	public Boolean addPolicy(PolicyMotor policyMotor) throws SQLException;
+
+	public Client selectPolicy(String clntnum) throws SQLException;
+
+}

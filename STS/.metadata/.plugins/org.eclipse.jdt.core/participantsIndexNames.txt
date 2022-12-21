@@ -1,0 +1,9 @@
+INDEX VERSION 1.131
+C:\DXCproj\Assignments\STS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2018734105.index
+\MVCProject1\src
+C:\DXCproj\Assignments\STS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1953900695.index
+\MVCProject1\src
+C:\DXCproj\Assignments\STS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3056679422.index
+\MVCProject1\src
+C:\DXCproj\Assignments\STS\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\667095295.index
+\MVCProject1\src

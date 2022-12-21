@@ -1,0 +1,63 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link href="bootstrap/sb/vendor/metisMenu/metisMenu.min.css"
+	rel="stylesheet">
+<link href="bootstrap/sb/dist/css/sb-admin-2.css" rel="stylesheet">
+<link href="bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link href="bootstrap/integral/integral-admin.css" rel="stylesheet"
+	type="text/css">
+
+<script language="javaScript" src="js/xmlReader.js"></script>
+<script src="bootstrap/sb/vendor/jquery/jquery.js"></script>
+
+<!-- sb admin begin -->
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/metisMenu/metisMenu.min.css"
+	rel="stylesheet">
+<link href="/csc-group-asia-web/bootstrap/sb/dist/css/sb-admin-2.css"
+	rel="stylesheet">
+<link href="/csc-group-asia-web/bootstrap/sb/vendor/morrisjs/morris.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<link
+	href="/csc-group-asia-web/bootstrap/datetimepicker/bootstrap-datetimepicker.min.css"
+	rel="stylesheet" media="screen">
+<link href="/csc-group-asia-web/bootstrap/integral/integral-admin.css"
+	rel="stylesheet" type="text/css">
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/jquery/jquery.min.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/js/bootstrap.min.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/sb/vendor/metisMenu/metisMenu.min.js"></script>
+<script src="/csc-group-asia-web/bootstrap/sb/dist/js/sb-admin-2.js"></script>
+<script
+	src="/csc-group-asia-web/bootstrap/datetimepicker/bootstrap-datetimepicker.min.js"
+	charset="UTF-8"></script>
+<script src="/csc-group-asia-web/bootstrap/integral/integral-admin.js"></script>
+
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/bootstrap/css/bootstrap.min.css"
+	rel="stylesheet">
+<link
+	href="/csc-group-asia-web/bootstrap/sb/vendor/font-awesome/css/font-awesome.min.css"
+	rel="stylesheet" type="text/css">
+<title>DXC</title>
+</head>
+<body>
+	UPLOAD FILE
+</body>
+</html>
